@@ -1,0 +1,33 @@
+﻿<Application x:Class="PracaInżynierska.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PracaInżynierska"
+             xmlns:viewModel="clr-namespace:PracaInżynierska.MVVM.ViewModel"
+             xmlns:view="clr-namespace:PracaInżynierska.MVVM.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/MenuButton.xaml"/>
+                <ResourceDictionary Source="Theme/UITextBox.xaml"/>
+                <ResourceDictionary Source="Theme/Window.xaml"/>
+                <ResourceDictionary Source="Theme/CalendarControl.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <DataTemplate DataType="{x:Type viewModel:GlownaVM}">
+                <view:Glowny/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:UzytkownikVM}">
+                <view:Uzytkownik/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:KalendarzVM}">
+                <view:Kalendarz/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:LoginPanelVM}">
+                <view:LoginPanel/>
+            </DataTemplate>
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="FontFamily" Value="Tahoma"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
